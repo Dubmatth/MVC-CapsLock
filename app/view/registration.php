@@ -18,7 +18,7 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputUsername">Nom d'utilisateur <span id="invalidUsername"></span></label>
-                    <input type="email" name="inputUsername" class="form-control" id="inputUsername" placeholder="Email">
+                    <input type="text" name="inputUsername" class="form-control" id="inputUsername" placeholder="Email">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputPassword">Mot de passe</label>

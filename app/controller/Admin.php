@@ -21,7 +21,7 @@ class Admin extends MainController {
             'firstName' => htmlspecialchars($_POST['inputFirstname']),
             'email' => htmlspecialchars($_POST['inputEmail']),
             'user_name' => htmlspecialchars($_POST['inputUsername']),
-            'password' => htmlspecialchars($_POST['inputPassword']),
+            'password' => password_hash(htmlspecialchars($_POST['inputPassword']), PASSWORD_DEFAULT),
             'roles' => $roles_default
         ];       
         foreach($user as $key => $value){
@@ -34,7 +34,7 @@ class Admin extends MainController {
             'user_name' => $user['user_name'],
             'password' => $user['password']
         ];
-
+        // FIXME Check if username is already in the DB before insert
         $adminModel = $this->load->model('AdminModel');
         $result = $adminModel->registration($this->table, $data);
 
