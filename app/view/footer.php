@@ -1,8 +1,9 @@
+<?php isset($_GET['url']) ? $path = path($_GET['url']) : $path = '' ?>
 <footer class="bg-dark">
             <div class="container" id="index_footer">
                 <div class="row">
                     <div class="mx-auto">
-                        <img src="asset/img/logo_headict.svg" id="index_footer_logo" alt="Logo headict">
+                        <img src="<?= $path ?>asset/img/logo_headict.svg" id="index_footer_logo" alt="Logo headict">
                     </div>
                 </div>
                 <div class="row">
@@ -31,7 +32,7 @@
                 </div>
                 <div class="row">
                     <div class="mx-auto">
-                        <img src="asset/img/cards_bank_footer.svg" alt="Images moyens de paiement">
+                        <img src="<?= $path ?>asset/img/cards_bank_footer.svg" alt="Images moyens de paiement">
                     </div>
                 </div>
                 <div class="row index_footer_div" id="index_footer_div_2">
@@ -70,9 +71,9 @@
             </div>
         </footer>
             
-        <script src="asset/js/jquery-3.3.1.min.js"></script>
-        <script src="asset/js/bootstrap.min.js"></script>
-        <script src="asset/js/main.js"></script>
+        <script src="<?= $path ?>asset/js/jquery-3.3.1.min.js"></script>
+        <script src="<?= $path ?>asset/js/bootstrap.min.js"></script>
+        <script src="<?= $path ?>asset/js/main.js"></script>
         <script src="https://js.stripe.com/v3/"></script>
     </body>
 </html>
