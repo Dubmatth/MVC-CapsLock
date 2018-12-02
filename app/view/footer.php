@@ -1,3 +1,4 @@
+</div>
 <?php isset($_GET['url']) ? $path = path($_GET['url']) : $path = '' ?>
 <footer class="bg-dark">
             <div class="container" id="index_footer">

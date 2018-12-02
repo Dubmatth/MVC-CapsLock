@@ -22,6 +22,7 @@ class CapsModel extends MainModel {
     public function insertCaps($table, $data){
         return $this->db->insert($table, $data);
     }
+    
     public function updateCaps($table, $data, $condition){
         return $this->db->update($table, $data, $condition);
     }

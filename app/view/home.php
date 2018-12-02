@@ -1,3 +1,10 @@
+<?php
+    if(isset($val) && $val == true){
+        echo '<div class="alert alert-success" role="alert">Vous êtes désormais enregistré !</div>';
+    } elseif (isset($val)) {
+        echo '<div class="alert alert-warning" role="alert">Problème lors de l\'ajout d\'utilisateur</div>';
+    }
+?>
 <div class="container-fluid">
     <div class="jumbotron rounded-0" id="home_jumb">
         <div id="text_jumb" class="offset-md-2 col-md-4">

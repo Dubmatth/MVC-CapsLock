@@ -39,6 +39,7 @@ class Caps extends MainController {
         } else {
             $image = 'logo_headict.svg';
         }
+        // Condition dosent work when isn't 'on'
         $published = $_POST['published'] == 'on' ? 1 : 0;
         $cat = intval($_POST['category_id']);
         $data = [

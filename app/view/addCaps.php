@@ -11,7 +11,7 @@
             lors de l\'ajout de la casquette</div>';
             }
         ?>
-        <form class="mb-4" action="http://localhost:8888/iP/POONamur/mvc/MVC-CapsLock/caps/insertCaps" method="post" enctype="multipart/form-data">
+        <form class="mb-4" action="<?= BASE_URL ?>caps/insertCaps" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="title">Titre</label>
                 <input type="text" id="title" name="title" required class="form-control">

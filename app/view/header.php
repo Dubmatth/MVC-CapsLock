@@ -78,10 +78,10 @@
                                             <form class="form-signin" action="" method="post">
                                                 <img class="mb-4" src="<?= $path ?>asset/img/logo_headict.svg" alt="logo headict" width="72" height="72">
                                                 <h1 class="h3 mb-3">Déjà inscrit ?</h1>
-                                                <label for="inputEmail" class="sr-only">Adresse E-mail</label>
-                                                <input type="email" name="_username" id="inputEmail" class="form-control col-md-8 offset-2" placeholder="Adresse e-mail" required autofocus>
-                                                <label for="inputPassword" class="sr-only">Mot de passe</label>
-                                                <input type="password" name="_password" id="inputPassword" class="form-control col-md-8 offset-2 mb-2" placeholder="Mot de passe" required>
+                                                <label for="inputEmailConnexion" class="sr-only">Adresse E-mail</label>
+                                                <input type="email" name="_username" id="inputEmailConnexion" class="form-control col-md-8 offset-2" placeholder="Adresse e-mail" required autofocus>
+                                                <label for="inputPasswordConnexion" class="sr-only">Mot de passe</label>
+                                                <input type="password" name="_password" id="inputPasswordConnexion" class="form-control col-md-8 offset-2 mb-2" placeholder="Mot de passe" required>
                                                 <div class="checkbox mb-3">
                                                     <label>
                                                         <input type="checkbox" value="remember-me" checked>Souvenez-vous de moi
@@ -93,7 +93,7 @@
                                         </div>
                                         <div class="modal-footer bg-dark" id="footer_modal_inscription">
                                             <h3 class="">Pas encore inscrit ?</h3>
-                                            <a href="<?= BASE_URL ?>admin/inscription" class="btn btn-primary">Inscription</a>
+                                            <a href="<?= BASE_URL ?>admin/registration" class="btn btn-primary">Inscription</a>
                                         </div>
                                         <div class="modal-footer bg-dark">
                                             <button type="button" class="btn btn-secondary close" data-dismiss="modal">Fermer</button>
@@ -105,3 +105,4 @@
                     </div>
                 </div>
             </nav>
+            <div class="container-fluid" id="main_content">
