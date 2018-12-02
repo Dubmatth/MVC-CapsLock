@@ -1,5 +1,5 @@
 <?php if(!empty($capsById[0])) : ?>
-<!-- <?php $path = path($_GET['url']) ?> -->
+<?php $path = path($_GET['url']) ?>
 <div class="container">
     <div class="row">
     <div class="offset-3 col-md-6">

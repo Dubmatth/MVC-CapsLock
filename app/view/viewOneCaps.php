@@ -1,4 +1,5 @@
 <?php if (!empty($caps[0])) : ?>
+<?php $path = path($_GET['url']) ?>
     <div class="container" id="product_detail">
         <div class="row">
             <div class="col-md-6 offset-3">
@@ -10,7 +11,7 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
                                 <!-- {% if is_granted('ROLE_ADMIN') %} -->
-                                <a href="caps/updateCaps" class="btn btn-sm btn-outline-secondary">Editer</a>
+                                <a href="<?= BASE_URL ?>caps/updateCaps/<?= $caps[0]['id'] ?>" class="btn btn-sm btn-outline-secondary">Editer</a>
                                 <!-- {% endif %} -->
                                 <a href="caps/updateCaps" class="btn btn-sm btn-outline-secondary">Acheter</a>
                             </div>

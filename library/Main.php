@@ -8,7 +8,7 @@ class Main
 
     private $url;
     private $controllerName = 'Index';
-    private $methodName = 'index';
+    private $methodName = 'home';
     private $controllerPath = 'app/controller/';
     private $controller;
 
