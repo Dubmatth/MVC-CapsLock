@@ -1,5 +1,4 @@
 <?php
-
 class Database extends PDO {
 
     private $dsn = 'mysql:host=localhost;dbname=caps_shop_mvc;charset=utf8';
@@ -31,7 +30,7 @@ class Database extends PDO {
         $values = ':'.implode(', :', array_keys($data));
         //dump($values);
         //:name, :image
-        
+
         $sql = "INSERT INTO $table ($keys) VALUES ($values)";
         //dump($data);
         $dbh = $this->prepare($sql);
@@ -40,7 +39,7 @@ class Database extends PDO {
         }
         return $dbh->execute();
     }
-    
+
     public function update($table, $data, $condition)
     {
         //dump($data);
@@ -56,5 +55,13 @@ class Database extends PDO {
             $dbh->bindValue($key, $value);
         }
         return $dbh->execute();
+    }
+
+    public function connexion($user_name) {
+        $sql = 'SELECT user_name, password, roles FROM user WHERE user_name = :user_name';
+        $dbh = $this->prepare($sql);
+        $dbh->bindValue(':user_name', $user_name, PDO::PARAM_STR);
+        $dbh->execute();
+        return $dbh->fetchAll(PDO::FETCH_ASSOC);
     }
 }

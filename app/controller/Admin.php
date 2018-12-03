@@ -8,6 +8,36 @@ class Admin extends MainController {
         parent::__construct();
     }
 
+    public function connexion(){
+        $user_name = htmlspecialchars($_POST['user_name']);
+        $password = htmlspecialchars($_POST['password']);
+        $connexionModel = $this->load->model('AdminModel');
+        $data['user'] = $connexionModel->connexion($user_name);
+        // FIXME Maybe add message
+        if (count($data['user']) != 0){
+            $password_from_db = $data['user'][0]['password'];
+            if (password_verify($password, $password_from_db)){
+                $data['user'][0] += ['panier' => 'mon panier'];
+                $this->load->view('header', $data);
+                $this->load->view('home');
+                $this->load->view('footer');
+            }
+        } else {
+            $this->load->view('header');
+            $this->load->view('home');
+            $this->load->view('footer');
+        }
+
+    }
+
+    public function logout(){
+        session_start();
+        session_destroy();
+        $this->load->view('header');
+        $this->load->view('home');
+        $this->load->view('footer');
+    }
+
     public function registration(){
         $this->load->view('header');
         $this->load->view('registration');
@@ -23,12 +53,9 @@ class Admin extends MainController {
             'user_name' => htmlspecialchars($_POST['inputUsername']),
             'password' => password_hash(htmlspecialchars($_POST['inputPassword']), PASSWORD_DEFAULT),
             'roles' => $roles_default
-        ];       
-        foreach($user as $key => $value){
-
-        }
+        ];
         $data = [
-            'first_name' => $user['name'],   
+            'first_name' => $user['name'],
             'last_name' => $user['firstName'],
             'email' => $user['email'],
             'user_name' => $user['user_name'],
@@ -46,6 +73,11 @@ class Admin extends MainController {
 
     public function userUpdate(){
     }
+
+    public function adminPanel(){
+
+    }
+
 
 }
 // Condition if avatar for update user profil
